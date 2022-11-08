@@ -41,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actions\Examen.cs" />
+    <Compile Include="actions\PasserExam.cs" />
     <Compile Include="models\Candidate.cs" />
+    <Compile Include="models\Question.cs" />
+    <Compile Include="models\Reponse.cs" />
+    <Compile Include="models\ReponseDirecte.cs" />
+    <Compile Include="models\ReponseQCM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
