@@ -30,6 +30,7 @@ namespace GestionExam.dao {
             this.source = source;
 
             connectionString = "SERVER=" + server + ";DATABASE=" + source + ";UID=" + user + ";PASSWORD=" + pwd;
+
             OpenConnection();
         }
 
@@ -107,6 +108,12 @@ namespace GestionExam.dao {
             query += ")";
 
             return UpdateQuery(query);
+        }
+
+        public List<Object[]> select(String tableName, String columnName, Object value) {
+            String query = "SELECT * FROM " + tableName + " WHERE " + columnName + " = '" + value + "'";
+
+            return SelectQuery(query);
         }
      }
 }

@@ -10,10 +10,14 @@ using GestionExam.models;
 namespace GestionExam.dao {
     class ProfesseurDao {
         private MySqlDatabase db;
-        private static const String TABLE_NAME = "professeur";
+        private const String TABLE_NAME = "professeur";
 
         public ProfesseurDao() {
-            db = new MySqlDatabase(TABLE_NAME);
+            db = new MySqlDatabase("gestionexam");
+        }
+
+        public void selectById(String id) {
+
         }
 
         public void insert(Professeur p) {
