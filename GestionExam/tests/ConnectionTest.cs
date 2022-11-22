@@ -20,6 +20,7 @@ namespace GestionExam.tests {
         }
 
         public void exe02() {
+            db = new MySqlDatabase("gestionexam");
             Application.Run(new ProfesseurForm());
         }
 

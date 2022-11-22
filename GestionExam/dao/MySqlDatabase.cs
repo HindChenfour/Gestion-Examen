@@ -112,7 +112,11 @@ namespace GestionExam.dao {
 
         public List<Object[]> select(String tableName, String columnName, Object value) {
             String query = "SELECT * FROM " + tableName + " WHERE " + columnName + " = '" + value + "'";
+            return SelectQuery(query);
+        }
 
+        public List<Object[]> selectAll(String tableName) {
+            String query = "SELECT * FROM " + tableName;
             return SelectQuery(query);
         }
      }

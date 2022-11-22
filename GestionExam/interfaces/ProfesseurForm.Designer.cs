@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.input1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.input3 = new System.Windows.Forms.RichTextBox();
+            this.input4 = new System.Windows.Forms.RichTextBox();
+            this.input2 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,32 +50,32 @@
             this.input1.TabIndex = 7;
             this.input1.Text = "";
             // 
-            // richTextBox1
+            // input3
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.richTextBox1.Location = new System.Drawing.Point(409, 209);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(339, 42);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.input3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.input3.Location = new System.Drawing.Point(409, 209);
+            this.input3.Name = "input3";
+            this.input3.Size = new System.Drawing.Size(339, 42);
+            this.input3.TabIndex = 8;
+            this.input3.Text = "";
             // 
-            // richTextBox2
+            // input4
             // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.richTextBox2.Location = new System.Drawing.Point(409, 289);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(339, 42);
-            this.richTextBox2.TabIndex = 9;
-            this.richTextBox2.Text = "";
+            this.input4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.input4.Location = new System.Drawing.Point(409, 289);
+            this.input4.Name = "input4";
+            this.input4.Size = new System.Drawing.Size(339, 42);
+            this.input4.TabIndex = 9;
+            this.input4.Text = "";
             // 
-            // richTextBox5
+            // input2
             // 
-            this.richTextBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.richTextBox5.Location = new System.Drawing.Point(409, 132);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(339, 42);
-            this.richTextBox5.TabIndex = 10;
-            this.richTextBox5.Text = "";
+            this.input2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.input2.Location = new System.Drawing.Point(409, 132);
+            this.input2.Name = "input2";
+            this.input2.Size = new System.Drawing.Size(339, 42);
+            this.input2.TabIndex = 10;
+            this.input2.Text = "";
             // 
             // dataGridView1
             // 
@@ -136,6 +136,7 @@
             this.submit.TabIndex = 17;
             this.submit.Text = "Submit";
             this.submit.UseVisualStyleBackColor = false;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // ProfesseurForm
             // 
@@ -149,9 +150,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.richTextBox5);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.input2);
+            this.Controls.Add(this.input4);
+            this.Controls.Add(this.input3);
             this.Controls.Add(this.input1);
             this.Name = "ProfesseurForm";
             this.Text = "ProfesseurForm";
@@ -164,9 +165,9 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox input1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.RichTextBox input3;
+        private System.Windows.Forms.RichTextBox input4;
+        private System.Windows.Forms.RichTextBox input2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -16,10 +16,6 @@ namespace GestionExam.dao {
             db = new MySqlDatabase("gestionexam");
         }
 
-        public void selectById(String id) {
-
-        }
-
         public void insert(Professeur p) {
             db.insert(TABLE_NAME, p.GetCni(), p.GetNom(), p.GetPrenom(), p.GetTel());
         }
