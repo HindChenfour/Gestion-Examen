@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GestionExam
+namespace GestionExam.interfaces
 {
-    public partial class FormInterfacecs : Form
+    public partial class ProfesseurForm : Form
     {
-        public FormInterfacecs()
+        public ProfesseurForm()
         {
             InitializeComponent();
         }

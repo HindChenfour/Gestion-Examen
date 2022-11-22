@@ -49,28 +49,28 @@
   <ItemGroup>
     <Compile Include="actions\Examen.cs" />
     <Compile Include="actions\PasserExam.cs" />
-    <Compile Include="dao\ExamenDao.cs" />
     <Compile Include="dao\MySqlDatabase.cs" />
-    <Compile Include="FormInterfacecs.cs">
+    <Compile Include="dao\ProfesseurDao.cs" />
+    <Compile Include="interfaces\ProfesseurForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInterfacecs.Designer.cs">
-      <DependentUpon>FormInterfacecs.cs</DependentUpon>
+    <Compile Include="interfaces\ProfesseurForm.Designer.cs">
+      <DependentUpon>ProfesseurForm.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Candidate.cs" />
+    <Compile Include="models\Professeur.cs" />
     <Compile Include="models\Question.cs" />
     <Compile Include="models\Reponse.cs" />
     <Compile Include="models\ReponseDirecte.cs" />
     <Compile Include="models\ReponseQCM.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormInterfacecs.resx">
-      <DependentUpon>FormInterfacecs.cs</DependentUpon>
+    <EmbeddedResource Include="interfaces\ProfesseurForm.resx">
+      <DependentUpon>ProfesseurForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
