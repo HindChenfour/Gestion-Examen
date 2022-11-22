@@ -32,8 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MySQL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +49,14 @@
   <ItemGroup>
     <Compile Include="actions\Examen.cs" />
     <Compile Include="actions\PasserExam.cs" />
+    <Compile Include="dao\ExamenDao.cs" />
+    <Compile Include="dao\MySqlDatabase.cs" />
+    <Compile Include="FormInterfacecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInterfacecs.Designer.cs">
+      <DependentUpon>FormInterfacecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\Candidate.cs" />
     <Compile Include="models\Question.cs" />
     <Compile Include="models\Reponse.cs" />
@@ -54,7 +68,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="FormInterfacecs.resx">
+      <DependentUpon>FormInterfacecs.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

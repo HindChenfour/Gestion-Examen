@@ -4,8 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GestionExam.dao;
+
 namespace GestionExam.dao {
-    class ExamenDao {
+    class ProfesseurDao {
+        private MySqlDatabase db;
+        private static const String TABLE_NAME = "professeur"; 
+
 
     }
 }

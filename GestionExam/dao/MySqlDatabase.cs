@@ -30,7 +30,7 @@ namespace GestionExam.dao {
             this.source = source;
 
             connectionString = "SERVER=" + server + ";DATABASE=" + source + ";UID=" + user + ";PASSWORD=" + pwd;
-            openConnection();
+            OpenConnection();
         }
 
         public MySqlDatabase(String source) : this("root", "", source) {
@@ -59,9 +59,9 @@ namespace GestionExam.dao {
             }
         }
 
-        public Object[][] SelectQuery(String query) {
+        public List<Object[]> SelectQuery(String query) {
             MySqlCommand cmd = new MySqlCommand(query, db);
-            Object[][] data;
+            List<Object[]> data = new List<Object[]>();
 
             try {
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -97,5 +97,16 @@ namespace GestionExam.dao {
                 return -1;
             }
         }
-    }
+
+        public int insert(String tableName, params Object[] row) {
+            String query = "INSERT INTO " + tableName + " VALUES('" + row[0] + "'";
+
+            for (int i = 1; i < row.Length; i++) {
+                query += ", '" + row[i] + "'";
+            }
+            query += ")";
+
+            return UpdateQuery(query);
+        }
+     }
 }
