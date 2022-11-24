@@ -69,12 +69,14 @@ namespace GestionExam.dao {
 
                 int cols = reader.FieldCount;
 
-                int j = 0;
                 while (reader.Read()){
+                    Object[] row = new Object[cols];
+
                     for (int i = 0; i < cols; i++) {
-                        data[i][j] = reader.GetValue(i);
+                        row[i] = reader.GetValue(i);
                     }
-                    j++;
+
+                    data.Add(row);
                 }
                 reader.Close();
                 return data;

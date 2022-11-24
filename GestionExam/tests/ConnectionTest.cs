@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GestionExam.dao;
 using System.Windows.Forms;
 using GestionExam.interfaces;
+using GestionExam.models;
 
 namespace GestionExam.tests {
     class ConnectionTest {
@@ -20,6 +21,14 @@ namespace GestionExam.tests {
         }
 
         public void exe02() {
+            db = new MySqlDatabase("gestionexam");
+            ProfesseurDao professeurDao = new ProfesseurDao(db);
+
+            List<Professeur> data = professeurDao.selectAll();
+            Console.WriteLine(data.ToString());
+        }
+
+        public void exe03() {
             db = new MySqlDatabase("gestionexam");
             Application.Run(new ProfesseurForm());
         }

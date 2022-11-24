@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.input1 = new System.Windows.Forms.RichTextBox();
             this.input3 = new System.Windows.Forms.RichTextBox();
             this.input4 = new System.Windows.Forms.RichTextBox();
             this.input2 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.submit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.mySqlGeometryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.mySqlGeometryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // input1
@@ -76,15 +77,6 @@
             this.input2.Size = new System.Drawing.Size(339, 42);
             this.input2.TabIndex = 10;
             this.input2.Text = "";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(789, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(470, 279);
-            this.dataGridView1.TabIndex = 11;
             // 
             // label2
             // 
@@ -134,9 +126,13 @@
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(163, 42);
             this.submit.TabIndex = 17;
-            this.submit.Text = "Submit";
+            this.submit.Text = "Insert";
             this.submit.UseVisualStyleBackColor = false;
             this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // mySqlGeometryBindingSource
+            // 
+            this.mySqlGeometryBindingSource.DataSource = typeof(MySql.Data.Types.MySqlGeometry);
             // 
             // ProfesseurForm
             // 
@@ -149,14 +145,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.input2);
             this.Controls.Add(this.input4);
             this.Controls.Add(this.input3);
             this.Controls.Add(this.input1);
             this.Name = "ProfesseurForm";
             this.Text = "ProfesseurForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mySqlGeometryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,11 +163,11 @@
         private System.Windows.Forms.RichTextBox input3;
         private System.Windows.Forms.RichTextBox input4;
         private System.Windows.Forms.RichTextBox input2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.BindingSource mySqlGeometryBindingSource;
     }
 }

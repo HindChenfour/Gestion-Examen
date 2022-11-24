@@ -16,14 +16,15 @@ namespace GestionExam.interfaces {
 
         public ProfesseurForm() {
             InitializeComponent();
-            professeurDao = new ProfesseurDao();
+            MySqlDatabase db = new MySqlDatabase("gestionexam");
+            professeurDao = new ProfesseurDao(db);
         }
 
         private void submit_Click(object sender, EventArgs e) {
             Professeur p = new Professeur(input3.Text, input1.Text, input2.Text, input4.Text);
             professeurDao.insert(p);
-
             
+         
         }
 
     }
