@@ -10,7 +10,7 @@ namespace GestionExam.models {
         private String reponse;
 
         public Reponse() {
-
+           
         }
 
         public Reponse(int id, String reponse) {
