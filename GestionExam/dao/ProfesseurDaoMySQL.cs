@@ -9,11 +9,11 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class ProfesseurDao {
+    class ProfesseurDaoMySQL : ProfesseurDao {
         private MySqlDatabase db;
         private const String TABLE_NAME = "professeur";
 
-        public ProfesseurDao(MySqlDatabase db) {
+        public ProfesseurDaoMySQL(MySqlDatabase db) {
             this.db = db;
         }
 

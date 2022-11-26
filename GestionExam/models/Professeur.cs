@@ -43,5 +43,10 @@ namespace GestionExam.models {
         public String GetPrenom() {
             return prenom;
         }
+
+        public override string ToString() {
+            return "email academique : " + emailAcademique + " ,  nom : " + nom + " , prenom : " + prenom;
+        }
+
     }
 }

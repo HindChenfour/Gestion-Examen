@@ -5,27 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class Candidate {
-        private String cne;
+    class Candidat {
+        private String emailAcademique;
         private String nom;
         private String prenom;
 
-        public Candidate() {
+        public Candidat() {
 
         }
 
-        public Candidate(String cne, String nom, String prenom) {
-            this.cne = cne;
+        public Candidat(String emailAcademique, String nom, String prenom) {
+            this.emailAcademique = emailAcademique;
             this.nom = nom;
             this.prenom = prenom;
         }
 
-        public void SetCne(String cne) {
-            this.cne = cne;
+        public void SetEmailAcademique(String emailAcademique) {
+            this.emailAcademique = emailAcademique;
         }
 
-        public String GetCne() {
-            return cne;
+        public String GetEmailAcademique() {
+            return emailAcademique;
         }
 
         public void SetNom(String nom) {
@@ -43,5 +43,9 @@ namespace GestionExam.models {
         public String GetPrenom() {
             return prenom;
         } 
+
+        public override string ToString(){
+ 	        return "email academique : " + emailAcademique + " ,  nom : " + nom + " , prenom : " + prenom;
+        }
     }
 }

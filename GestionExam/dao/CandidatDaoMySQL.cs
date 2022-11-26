@@ -4,37 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using GestionExam.dao;
 using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class ProfesseurDao {
+    class CandidatDaoMySQL {
         private MySqlDatabase db;
-        private const String TABLE_NAME = "professeur";
+        private const String TABLE_NAME = "candidat";
 
-        public ProfesseurDao(MySqlDatabase db) {
+        public CandidatDaoMySQL(MySqlDatabase db) {
             this.db = db;
         }
 
-        public Professeur selectById(String id) {
+        public Candidat selectById(String id) {
             Object[] element = db.select(TABLE_NAME, "email_academique", id).ElementAt(0);
-            return ExamenMapping.GetProfesseur(element);
+            return ExamenMapping.GetCandidat(element);
         }
 
-        public List<Professeur> selectAll() {
+        public List<Candidat> selectAll() {
             List<Object[]> data = db.selectAll(TABLE_NAME);
-            List<Professeur> elements = new List<Professeur>();
+            List<Candidat> elements = new List<Candidat>();
 
             for (int i = 0; i < data.Count; i++) {
-                elements.Add(ExamenMapping.GetProfesseur(data.ElementAt(i)));
+                elements.Add(ExamenMapping.GetCandidat(data.ElementAt(i)));
             }
             return elements;
         }
 
-
-        public void insert(Professeur p) {
-            db.insert(TABLE_NAME, ExamenMapping.GetProfesseurRow(p));
+        public void insert(Candidat c) {
+            db.insert(TABLE_NAME, ExamenMapping.GetCandidatRow(c));
         }
     }
 }
