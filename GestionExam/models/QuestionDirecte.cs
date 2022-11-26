@@ -12,11 +12,11 @@ namespace GestionExam.models {
 
         }
 
-        public QuestionDirecte(int idQuest, String question, String type) : base(idQuest, question, type) {
+        public QuestionDirecte(int idQuest, String question) : base(idQuest, question, "directe") {
 
         }
 
-        public QuestionDirecte(int idQuest, String question, String type, String reponse) : base(idQuest, question, type) {
+        public QuestionDirecte(int idQuest, String question, String reponse) : base(idQuest, question, "directe") {
             this.reponse = reponse;
         }
 

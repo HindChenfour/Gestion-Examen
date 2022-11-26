@@ -9,8 +9,8 @@ using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
     interface CandidatDao {
-        public Candidat selectById(String id);
-        public List<Candidat> selectAll();
-        public void insert(Candidat c);
+        Candidat selectById(String id);
+        List<Candidat> selectAll();
+        void insert(Candidat c);
     }
 }

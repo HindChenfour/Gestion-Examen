@@ -12,11 +12,11 @@ namespace GestionExam.models {
 
         }
 
-        public QuestionChoixMultiple(int idQuest, String question, String type) : base(idQuest, question, type) {
+        public QuestionChoixMultiple(int idQuest, String question) : base(idQuest, question, "qcm") {
 
         }
 
-        public QuestionChoixMultiple(int idQuest, String question, String type, List<Choix> choix) : base(idQuest, question, type) {
+        public QuestionChoixMultiple(int idQuest, String question, List<Choix> choix) : base(idQuest, question, "qcm") {
             this.choix = choix;
         }
 
@@ -25,7 +25,7 @@ namespace GestionExam.models {
             this.choix = choix;
         }
 
-        public List<Choix> GetReponse() {
+        public List<Choix> GetChoix() {
             return choix;
         }
 

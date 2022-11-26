@@ -8,7 +8,7 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class CandidatDaoMySQL {
+    class CandidatDaoMySQL : CandidatDao {
         private MySqlDatabase db;
         private const String TABLE_NAME = "candidat";
 
@@ -17,7 +17,7 @@ namespace GestionExam.dao {
         }
 
         public Candidat selectById(String id) {
-            Object[] element = db.select(TABLE_NAME, "email_academique", id).ElementAt(0);
+            Object[] element = db.selectByKey(TABLE_NAME, "email_academique", id);
             return ExamenMapping.GetCandidat(element);
         }
 

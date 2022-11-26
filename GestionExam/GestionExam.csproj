@@ -49,9 +49,13 @@
   <ItemGroup>
     <Compile Include="actions\PasserExam.cs" />
     <Compile Include="dao\CandidatDao.cs" />
-    <Compile Include="dao\MySqlDatabase.cs" />
+    <Compile Include="dao\CandidatDaoMySQL.cs" />
     <Compile Include="dao\ProfesseurDao.cs" />
+    <Compile Include="dao\MySqlDatabase.cs" />
+    <Compile Include="dao\ProfesseurDaoMySQL.cs" />
     <Compile Include="dao\mapping\ExamenMapping.cs" />
+    <Compile Include="dao\QuestionDao.cs" />
+    <Compile Include="dao\QuestionDaoMySQL.cs" />
     <Compile Include="models\Candidat.cs" />
     <Compile Include="models\Choix.cs" />
     <Compile Include="models\Examen.cs" />

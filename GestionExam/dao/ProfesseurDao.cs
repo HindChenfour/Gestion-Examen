@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using GestionExam.models;
-using GestionExam.dao.mapping;
 
-namespace GestionExam.dao.mapping {
+namespace GestionExam.dao {
     interface ProfesseurDao {
-        public Professeur selectById(String id);
-        public List<Professeur> selectAll();
-        public void insert(Professeur p);
+        Professeur selectById(String id);
+        List<Professeur> selectAll();
+        void insert(Professeur p);
     }
 }

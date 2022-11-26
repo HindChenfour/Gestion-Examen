@@ -43,5 +43,10 @@ namespace GestionExam.models {
         public String GetType() {
             return type;
         }
+
+        override public String ToString() {
+            return "I'm question number : " + id;
+        }
+
     }
 }

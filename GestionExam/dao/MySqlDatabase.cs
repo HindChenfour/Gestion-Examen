@@ -117,6 +117,10 @@ namespace GestionExam.dao {
             return SelectQuery(query);
         }
 
+        public Object[] selectByKey(String tableName, String columnName, Object key) {
+            return select(tableName, columnName, key).ElementAt(0)
+        }
+
         public List<Object[]> selectAll(String tableName) {
             String query = "SELECT * FROM " + tableName;
             return SelectQuery(query);

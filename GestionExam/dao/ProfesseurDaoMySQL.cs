@@ -18,7 +18,7 @@ namespace GestionExam.dao {
         }
 
         public Professeur selectById(String id) {
-            Object[] element = db.select(TABLE_NAME, "email_academique", id).ElementAt(0);
+            Object[] element = db.selectByKey(TABLE_NAME, "email_academique", id);
             return ExamenMapping.GetProfesseur(element);
         }
 
