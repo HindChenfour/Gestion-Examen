@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionExam.models {
     class Examen {
+        private int id;
         private DateTime dateOuverture;
         private DateTime dateFermeture;
         private int duree;
@@ -17,13 +18,22 @@ namespace GestionExam.models {
         
         }
 
-        public Examen(DateTime dateOuv, DateTime dateFer, int duree, List<Question> quests, Professeur realis, String matiere) {
+        public Examen(int id, DateTime dateOuv, DateTime dateFer, int duree, List<Question> quests, Professeur realis, String matiere) {
+            this.id = id;
             this.dateOuverture = dateOuv;
             this.dateFermeture = dateFer;
             this.duree = duree;
             this.questions = quests;
             this.realisateur = realis;
             this.matiere = matiere;
+        }
+
+        public void SetId(int id) {
+            this.id = id;
+        }
+
+        public int GetId() {
+            return id;
         }
 
         public void SetDateOuverture(DateTime date) {

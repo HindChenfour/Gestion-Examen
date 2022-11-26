@@ -8,7 +8,7 @@ using GestionExam.models;
 
 namespace GestionExam.actions {
     class PasserExam {
-        private Candidate candidat;
+        private Candidat candidat;
         private Examen examen;
         private DateTime date;
         private double note;
@@ -17,18 +17,18 @@ namespace GestionExam.actions {
 
         }
 
-        public PasserExam(Candidate candidat, Examen examen, DateTime date, double note) {
+        public PasserExam(Candidat candidat, Examen examen, DateTime date, double note) {
             this.candidat = candidat;
             this.examen = examen;
             this.date = date;
             this.note = note;
         }
 
-        public void SetCandidat(Candidate candidat) {
+        public void SetCandidat(Candidat candidat) {
             this.candidat = candidat;
         }
 
-        public Candidate GetCandidate() {
+        public Candidat GetCandidate() {
             return candidat;
         }
 

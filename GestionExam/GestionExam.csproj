@@ -47,19 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="actions\Examen.cs" />
     <Compile Include="actions\PasserExam.cs" />
+    <Compile Include="dao\CandidatDao.cs" />
     <Compile Include="dao\MySqlDatabase.cs" />
     <Compile Include="dao\ProfesseurDao.cs" />
-    <Compile Include="interfaces\ProfesseurForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaces\ProfesseurForm.Designer.cs">
-      <DependentUpon>ProfesseurForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="models\Candidate.cs" />
+    <Compile Include="dao\mapping\ExamenMapping.cs" />
+    <Compile Include="models\Candidat.cs" />
+    <Compile Include="models\Choix.cs" />
+    <Compile Include="models\Examen.cs" />
     <Compile Include="models\Professeur.cs" />
     <Compile Include="models\Question.cs" />
+    <Compile Include="models\QuestionDirecte.cs" />
+    <Compile Include="models\QuestionChoixMultiple.cs" />
     <Compile Include="models\Reponse.cs" />
     <Compile Include="models\ReponseDirecte.cs" />
     <Compile Include="models\ReponseQCM.cs" />
@@ -145,9 +144,7 @@
     <None Include="Properties\DataSources\MySql.Data.Types.MySqlGeometry.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="interfaces\ProfesseurForm.resx">
-      <DependentUpon>ProfesseurForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
