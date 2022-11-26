@@ -6,32 +6,22 @@ using System.Threading.Tasks;
 
 namespace GestionExam.models {
     class ReponseQCM : Reponse {
-        private int idQst;
-        private bool veracite;
+        private int idChoix;
 
         public ReponseQCM() : base() {
 
         }
 
-        public ReponseQCM(int idQst, String reponse, bool veracite) : base(idQst, reponse) {
-            this.idQst = idQst;
-            this.veracite = veracite;
+        public ReponseQCM(int idQst, int idChoix) : base(idQst) {
+            this.idChoix = idChoix;
         }
 
-        public int GetIdQst() {
-            return idQst;
+        public int GetIdChoix() {
+            return idChoix;
         }
 
-        public void SetIdQst(int idQst) {
-            this.idQst = idQst;
-        }
-
-        public bool GetVeracite() {
-            return veracite;
-        }
-
-        public void SetVeracite(bool veracite) {
-            this.veracite = veracite;
+        public void SetIdChoix(int idChoix) {
+            this.idChoix = idChoix;
         }
     }
 }

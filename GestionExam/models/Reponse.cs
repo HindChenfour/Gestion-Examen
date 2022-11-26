@@ -6,32 +6,22 @@ using System.Threading.Tasks;
 
 namespace GestionExam.models {
     class Reponse {
-        private int id;
-        private String reponse;
+        private int idQuest;
 
         public Reponse() {
            
         }
 
-        public Reponse(int id, String reponse) {
-            this.id = id;
-            this.reponse = reponse;
+        public Reponse(int idQuest) {
+            this.idQuest = idQuest;
         }
 
-        public int GetId() {
-            return id;
+        public int GetIdQuest() {
+            return idQuest;
         }
 
-        public void SetId(int id) {
-            this.id = id;
-        }
-
-        public String GetReponse() {
-            return reponse;
-        }
-
-        public void SetReponse(String reponse) {
-            this.reponse = reponse;
+        public void SetIdQuest(int idQuest) {
+            this.idQuest = idQuest;
         }
     }
 }

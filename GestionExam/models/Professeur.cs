@@ -6,28 +6,26 @@ using System.Threading.Tasks;
 
 namespace GestionExam.models {
     class Professeur {
-        private String cni;
+        private String emailAcademique;
         private String nom;
         private String prenom;
-        private String tel;
 
         public Professeur(){
 
         }
 
-        public Professeur(String cni, String nom, String prenom, String tel) {
-            this.cni = cni;
+        public Professeur(String emailAcademique, String nom, String prenom) {
+            this.emailAcademique = emailAcademique;
             this.nom = nom;
             this.prenom = prenom;
-            this.tel = tel;
         }
 
-        public void SetCni(String cni) {
-            this.cni = cni;
+        public void SetEmailAcademique(String emailAcademique) {
+            this.emailAcademique = emailAcademique;
         }
 
-        public String GetCni() {
-            return cni;
+        public String GetEmailAcademique() {
+            return emailAcademique;
         }
 
         public void SetNom(String nom) {
@@ -45,14 +43,5 @@ namespace GestionExam.models {
         public String GetPrenom() {
             return prenom;
         }
-
-        public void SetTel(String tel) {
-            this.tel = tel;
-        }
-
-        public String GetTel() {
-            return tel;
-        }
-
     }
 }

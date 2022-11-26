@@ -8,16 +8,16 @@ namespace GestionExam.models {
     class Question {
         private int id;
         private String question;
-        private double bareme;
+        private String type;
 
         public Question() {
 
         }
 
-        public Question(int id, String question, double bareme) {
+        public Question(int id, String question, String type) {
             this.id = id;
             this.question = question;
-            this.bareme = bareme;
+            this.type = type;
         }
 
         public void SetId(int id) {
@@ -36,16 +36,12 @@ namespace GestionExam.models {
             return question;
         }
 
-        public void SetBareme(double bareme) {
-            this.bareme = bareme;
+        public void SetType(String type) {
+            this.type = type;
         }
 
-        public double GetBareme() {
-            return bareme;
-        }
-
-        public int Repondre(Reponse rp) {
-            return rp.GetId();
+        public String GetType() {
+            return type;
         }
     }
 }

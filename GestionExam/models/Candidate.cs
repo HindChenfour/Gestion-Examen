@@ -19,5 +19,29 @@ namespace GestionExam.models {
             this.nom = nom;
             this.prenom = prenom;
         }
+
+        public void SetCne(String cne) {
+            this.cne = cne;
+        }
+
+        public String GetCne() {
+            return cne;
+        }
+
+        public void SetNom(String nom) {
+            this.nom = nom;
+        }
+
+        public String GetNom() {
+            return nom;
+        }
+
+        public void SetPrenom(String prenom) {
+            this.prenom = prenom;
+        }
+
+        public String GetPrenom() {
+            return prenom;
+        } 
     }
 }

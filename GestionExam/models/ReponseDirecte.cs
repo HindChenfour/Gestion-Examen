@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace GestionExam.models {
     class ReponseDirecte : Reponse {
-        private double valeur;
+        private String reponse;
 
         public ReponseDirecte() : base() {
 
         }
 
-        public ReponseDirecte(int idQst, String reponse, double valeur) : base(idQst, reponse) {
-            this.valeur = valeur;
+        public ReponseDirecte(int idQuest, String reponse) : base(idQuest) {
+            this.reponse = reponse;
         }
 
-        public double GetValeur() {
-            return valeur;
+        public void SetReponse(String reponse)
+        {
+            this.reponse = reponse;
         }
 
-        public void SetValeur(double valeur) {
-            this.valeur = valeur;
+        public String GetReponse() {
+            return reponse;
         }
     }
 }
