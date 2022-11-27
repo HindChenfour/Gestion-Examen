@@ -105,7 +105,7 @@ namespace GestionExam.dao.mapping {
         }
 
 
-        /*--------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------*/
 
 
         static public ReponseQCM GetReponseQCM(params Object[] row) {
@@ -118,6 +118,26 @@ namespace GestionExam.dao.mapping {
                 r.GetIdQuest()
             };
         }
+
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+        static public Examen GetExamen(params Object[] row) {
+            return new Examen((int)row[0], DateTime.Parse((String)row[1]), DateTime.Parse((String)row[2]), (int)row[3], new Professeur((String)row[4]), (String)row[5]);
+        }
+
+        static public Object[] GetExamenRow(Examen e) {
+            return new Object[] {
+                e.GetId(),
+                e.GetDateOuverture(),
+                e.GetDateFermeture(),
+                e.GetDuree(),
+                e.GetRealisateur().GetEmailAcademique(),
+                e.GetMatiere()
+            };
+        }
+
 
     }
 }

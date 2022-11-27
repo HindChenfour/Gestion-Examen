@@ -50,6 +50,8 @@
     <Compile Include="actions\PasserExam.cs" />
     <Compile Include="dao\CandidatDao.cs" />
     <Compile Include="dao\CandidatDaoMySQL.cs" />
+    <Compile Include="dao\ExamenDao.cs" />
+    <Compile Include="dao\ExamenDaoMySQL.cs" />
     <Compile Include="dao\ProfesseurDao.cs" />
     <Compile Include="dao\MySqlDatabase.cs" />
     <Compile Include="dao\ProfesseurDaoMySQL.cs" />

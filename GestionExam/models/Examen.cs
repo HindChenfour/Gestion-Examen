@@ -28,7 +28,23 @@ namespace GestionExam.models {
             this.matiere = matiere;
         }
 
-        public void SetId(int id) {
+        public Examen(int id, DateTime dateOuv, DateTime dateFer, int duree, Professeur realis, String matiere) {
+            this.id = id;
+            this.dateOuverture = dateOuv;
+            this.dateFermeture = dateFer;
+            this.duree = duree;
+            this.realisateur = realis;
+            this.matiere = matiere;
+        }
+
+        public Examen(int id, int duree, String matiere) {
+            this.id = id;
+            this.duree = duree;
+            this.matiere = matiere;
+        }
+
+        public void SetId(int id)
+        {
             this.id = id;
         }
 
@@ -48,7 +64,7 @@ namespace GestionExam.models {
             this.dateFermeture = date;
         }
 
-        public DateTime GetFermeture() {
+        public DateTime GetDateFermeture() {
             return dateFermeture;
         }
 

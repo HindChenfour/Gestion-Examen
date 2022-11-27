@@ -20,6 +20,10 @@ namespace GestionExam.models {
             this.prenom = prenom;
         }
 
+        public Professeur(String emailAcademique) {
+            this.emailAcademique = emailAcademique;
+        }
+
         public void SetEmailAcademique(String emailAcademique) {
             this.emailAcademique = emailAcademique;
         }

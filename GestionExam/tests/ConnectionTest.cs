@@ -11,28 +11,38 @@ namespace GestionExam.tests {
     class ConnectionTest {
         private MySqlDatabase db;
 
+        private ProfesseurDao professeurDao;
+        private CandidatDao candidatDao;
+        private QuestionDao questionDao;
+        private ReponseDao reponseDao;
+        private ExamenDao examenDao;
+
         public ConnectionTest() {
             db = new MySqlDatabase("gestionexamen");
-            exe12();
+
+            professeurDao = new ProfesseurDaoMySQL(db);
+            candidatDao = new CandidatDaoMySQL(db);
+            questionDao = new QuestionDaoMySQL(db);
+            reponseDao = new ReponseDaoMySQL(db);
+            examenDao = new ExamenDaoMySQL(db);
+
+
+            exe14();
         }
 
         public void exe01() {
-            ProfesseurDao professeurDao = new ProfesseurDaoMySQL(db);
             Professeur p = new Professeur("amine.chenfour@usmba.ac.ma", "Chenfour", "amine");
 
             professeurDao.insert(p);
         }
 
         public void exe02() {
-            ProfesseurDao professeurDao = new ProfesseurDaoMySQL(db);
             Professeur p = professeurDao.selectById("amine.chenfour@usmba.ac.ma");
 
             Console.WriteLine(p);
         }
 
         public void exe03() {
-            ProfesseurDao professeurDao = new ProfesseurDaoMySQL(db);
-
             List<Professeur> data = professeurDao.selectAll();
 
             for (int i = 0; i < data.Count(); i++) {
@@ -42,22 +52,18 @@ namespace GestionExam.tests {
 
 
         public void exe04() {
-            CandidatDao candidatDao = new CandidatDaoMySQL(db);
             Candidat c = new Candidat("ali.bennani@usmba.ac.ma", "ali", "bannani");
 
             candidatDao.insert(c);
         }
 
         public void exe05() {
-            CandidatDao candidatDao = new CandidatDaoMySQL(db);
             Candidat c = candidatDao.selectById("hajar.bennani@usmba.ac.ma");
 
             Console.WriteLine(c);
         }
 
         public void exe06() {
-            CandidatDao candidatDao = new CandidatDaoMySQL(db);
-
             List<Candidat> data = candidatDao.selectAll();
 
             for (int i = 0; i < data.Count(); i++) {
@@ -66,8 +72,6 @@ namespace GestionExam.tests {
         }
 
         public void exe07() {
-            QuestionDao questionDao = new QuestionDaoMySQL(db);
-
             QuestionDirecte qd1 = new QuestionDirecte(1, "Définir Le langage UML : ");
 
             QuestionChoixMultiple qcm1 = new QuestionChoixMultiple(2, "Que sifgnifie UML : ");
@@ -93,7 +97,6 @@ namespace GestionExam.tests {
         }
 
         public void exe08() {
-            QuestionDao questionDao = new QuestionDaoMySQL(db);
             List<Question> data = questionDao.selectAllQuestions();
 
             for (int i = 0; i < data.Count(); i++) {
@@ -102,8 +105,6 @@ namespace GestionExam.tests {
         }
 
         public void exe09() {
-            QuestionDao questionDao = new QuestionDaoMySQL(db);
-
             QuestionChoixMultiple q = (QuestionChoixMultiple)questionDao.selectQuestionById(2);
             Console.WriteLine(q.GetQuestion());
 
@@ -113,8 +114,6 @@ namespace GestionExam.tests {
         }
 
         public void exe10() {
-            ReponseDao reponseDao = new ReponseDaoMySQL(db);
-
             ReponseDirecte rd1 = new ReponseDirecte(1, "C est l avreviation de Unifying Modeling Language");
             ReponseQCM rq1 = new ReponseQCM(2, 11);
             ReponseDirecte rd2 = new ReponseDirecte(3, "C est ...");
@@ -127,8 +126,6 @@ namespace GestionExam.tests {
         }
 
         public void exe11() { 
-            ReponseDao reponseDao = new ReponseDaoMySQL(db);
-
             ReponseQCM r = (ReponseQCM)reponseDao.selectReponseById(11);
             Choix c = reponseDao.selectReponseQCM(11);
 
@@ -136,14 +133,30 @@ namespace GestionExam.tests {
         }
 
         public void exe12() {
-            ReponseDao reponseDao = new ReponseDaoMySQL(db);
-
             List<Reponse> data = reponseDao.selectAll();
 
             for (int i = 0; i < data.Count; i++) {
                 Reponse r = data.ElementAt(i);
                 Console.WriteLine(r.GetIdQuest());
             }
+        }
+
+        public void exe13() {
+            Examen e1 = new Examen(3, new DateTime(2022, 12, 4, 14, 30, 0), new DateTime(2022, 12, 4, 16, 30, 0), 45, new Professeur("mehdi.chenfour@usmba.ac.ma"), "Java");
+            examenDao.insert(e1);
+
+            Examen e2 = new Examen(4, new DateTime(2022, 12, 4, 16, 30, 0), new DateTime(2022, 12, 4, 18, 30, 0), 45, new Professeur("mehdi.chenfour@usmba.ac.ma"), "Reseau");
+            examenDao.insert(e2);
+
+        }
+
+        public void exe14() {
+            Examen e = examenDao.selectExamenById(2);
+            List<Examen> exams = examenDao.selectExamenByMatiere("Reseau");
+            List<Examen> exams1 = examenDao.selectExamenByProfesseur("amine.chenfour@usmba.ac.ma");
+            List<Examen> exams2 = examenDao.selectAll();
+
+            Console.WriteLine(exams2);
         }
 
         public static void Main(String[] arg) {

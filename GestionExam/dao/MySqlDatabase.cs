@@ -109,13 +109,12 @@ namespace GestionExam.dao {
             }
             query += ")";
 
-            Console.WriteLine(query);
-
             return UpdateQuery(query);
         }
 
         public List<Object[]> select(String tableName, String columnName, Object value) {
             String query = "SELECT * FROM " + tableName + " WHERE " + columnName + " = '" + value + "'";
+            Console.WriteLine(query);
             return SelectQuery(query);
         }
 
