@@ -56,6 +56,8 @@
     <Compile Include="dao\mapping\ExamenMapping.cs" />
     <Compile Include="dao\QuestionDao.cs" />
     <Compile Include="dao\QuestionDaoMySQL.cs" />
+    <Compile Include="dao\ReponseDao.cs" />
+    <Compile Include="dao\ReponseDaoMySQL.cs" />
     <Compile Include="models\Candidat.cs" />
     <Compile Include="models\Choix.cs" />
     <Compile Include="models\Examen.cs" />

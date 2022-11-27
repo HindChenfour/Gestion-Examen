@@ -109,6 +109,8 @@ namespace GestionExam.dao {
             }
             query += ")";
 
+            Console.WriteLine(query);
+
             return UpdateQuery(query);
         }
 
@@ -118,7 +120,7 @@ namespace GestionExam.dao {
         }
 
         public Object[] selectByKey(String tableName, String columnName, Object key) {
-            return select(tableName, columnName, key).ElementAt(0)
+            return select(tableName, columnName, key).ElementAt(0);
         }
 
         public List<Object[]> selectAll(String tableName) {

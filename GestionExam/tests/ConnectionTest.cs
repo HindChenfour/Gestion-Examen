@@ -13,7 +13,7 @@ namespace GestionExam.tests {
 
         public ConnectionTest() {
             db = new MySqlDatabase("gestionexamen");
-            exe09();
+            exe12();
         }
 
         public void exe01() {
@@ -112,6 +112,39 @@ namespace GestionExam.tests {
             }
         }
 
+        public void exe10() {
+            ReponseDao reponseDao = new ReponseDaoMySQL(db);
+
+            ReponseDirecte rd1 = new ReponseDirecte(1, "C est l avreviation de Unifying Modeling Language");
+            ReponseQCM rq1 = new ReponseQCM(2, 11);
+            ReponseDirecte rd2 = new ReponseDirecte(3, "C est ...");
+            ReponseQCM rq2 = new ReponseQCM(4, 23);
+
+            reponseDao.insert(rd1, "directe");
+            //reponseDao.insert(rq1, "qcm");
+            reponseDao.insert(rd2, "directe");
+            //reponseDao.insert(rq2, "qcm");
+        }
+
+        public void exe11() { 
+            ReponseDao reponseDao = new ReponseDaoMySQL(db);
+
+            ReponseQCM r = (ReponseQCM)reponseDao.selectReponseById(11);
+            Choix c = reponseDao.selectReponseQCM(11);
+
+            Console.WriteLine(r.GetIdQuest() + " >> " + r.GetIdChoix() + " >> " + c.GetChoix());
+        }
+
+        public void exe12() {
+            ReponseDao reponseDao = new ReponseDaoMySQL(db);
+
+            List<Reponse> data = reponseDao.selectAll();
+
+            for (int i = 0; i < data.Count; i++) {
+                Reponse r = data.ElementAt(i);
+                Console.WriteLine(r.GetIdQuest());
+            }
+        }
 
         public static void Main(String[] arg) {
             new ConnectionTest();

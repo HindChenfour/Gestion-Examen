@@ -92,5 +92,32 @@ namespace GestionExam.dao.mapping {
 /*--------------------------------------------------------------------------------------------------------*/
 
 
+        static public ReponseDirecte GetReponseDirecte(params Object[] row) {
+            return new ReponseDirecte((int)row[2], (String)row[1]);
+        }
+
+        static public Object[] GetReponseDirecteRow(ReponseDirecte r) {
+            return new Object[] {
+                r.GetIdQuest(),
+                r.GetReponse(),
+                r.GetIdQuest()
+            };
+        }
+
+
+        /*--------------------------------------------------------------------------------------------------------*/
+
+
+        static public ReponseQCM GetReponseQCM(params Object[] row) {
+            return new ReponseQCM((int)row[1], (int)row[0]);
+        }
+
+        static public Object[] GetReponseQCMRow(ReponseQCM r) {
+            return new Object[] {
+                r.GetIdChoix(),
+                r.GetIdQuest()
+            };
+        }
+
     }
 }
