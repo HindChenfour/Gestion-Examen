@@ -18,31 +18,36 @@ namespace GestionExam.dao {
             this.db = db;
         }
 
-        public Question selectQuestionById(int id, String type) {
+        public Question selectQuestionById(int idQst, int idExam, String type) {
             if (type.Equals("directe")) {
-                Object[] element = db.selectByKey(QST_DIRECT_TABLE, "id_qst", id);
-                return ExamenMapping.GetQuestionDirecte(element);
+                List<Object[]> elements = db.selectByConditions(QST_DIRECT_TABLE, "id_qst = '" + idQst +"'", "id_exam = '" + idExam + "'");
+                return ExamenMapping.GetQuestionDirecte(elements.ElementAt(0));    
             }
 
             else if (type.Equals("qcm")) {
-                Object[] element = db.selectByKey(QCM_TABLE, "id_qst", id);
-                return ExamenMapping.GetQuestionCM(selectChoices(id), element);
+                List<Object[]> elements = db.selectByConditions(QCM_TABLE, "id_qst = '" + idQst + "'", "id_exam = '" + idExam + "'");
+
+                QuestionChoixMultiple q = ExamenMapping.GetQuestionCM(selectChoices(idQst), elements.ElementAt(0));
+                q.SetChoix(selectChoices(q.GetId()));
+
+                return q;
             }
             return null;
         }
 
-        public Question selectQuestionById(int id) {
+        public Question selectQuestionById(int id, int idExam)
+        {
             if (db.select(QST_DIRECT_TABLE, "id_qst", id).Count() == 1) {
-                return selectQuestionById(id, "directe");
+                return selectQuestionById(id, idExam, "directe");
             }
 
             else if (db.select(QCM_TABLE, "id_qst", id).Count() == 1) {
-                return selectQuestionById(id, "qcm");
+                return selectQuestionById(id,idExam, "qcm");
             }
             return null;
         }
 
-        public List<Question> selectAllQuestions() {
+        public List<Question> selectAllQuestions(int idExam) {
             List<Object[]> data = db.selectAll(QCM_TABLE);
             data.AddRange(db.selectAll(QST_DIRECT_TABLE));
 
@@ -52,7 +57,7 @@ namespace GestionExam.dao {
                 Object[] element = data.ElementAt(i);
                 int id = (int)element[0];
 
-                elements.Add(selectQuestionById(id));
+                elements.Add(selectQuestionById(id, idExam));
             }
             return elements;
         }
@@ -74,14 +79,21 @@ namespace GestionExam.dao {
 
             else if (type.Equals("qcm")) {
                 QuestionChoixMultiple qcm = (QuestionChoixMultiple)q;
-                List<Choix> choices = qcm.GetChoix();
+                List<Choix> choices = new List<Choix>();
+                choices = qcm.GetChoix();
 
                 db.insert(QCM_TABLE, ExamenMapping.GetQuestionCMRow((QuestionChoixMultiple)q, idExamen));
 
-                for (int i = 0; i < choices.Count(); i++) {
-                    db.insert(CHOICES_TABLE, ExamenMapping.GetChoixRow(choices.ElementAt(i), q.GetId()));
+                if (choices != null) {
+                    for (int i = 0; i < choices.Count(); i++) {
+                        db.insert(CHOICES_TABLE, ExamenMapping.GetChoixRow(choices.ElementAt(i), q.GetId(), idExamen));
+                    }
                 }
             }
+        }
+
+        public void insertChoice(int idExam, int idQst, Choix c) {
+            db.insert(CHOICES_TABLE, ExamenMapping.GetChoixRow(c, idQst, idExam));
         }
     }
 }

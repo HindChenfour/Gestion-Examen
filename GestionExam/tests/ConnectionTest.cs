@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GestionExam.dao;
 using System.Windows.Forms;
 using GestionExam.models;
+using GestionExam.business;
 
 namespace GestionExam.tests {
     class ConnectionTest {
@@ -17,6 +18,8 @@ namespace GestionExam.tests {
         private ReponseDao reponseDao;
         private ExamenDao examenDao;
 
+        private GestionExamenServices services;
+
         public ConnectionTest() {
             db = new MySqlDatabase("gestionexamen");
 
@@ -26,12 +29,13 @@ namespace GestionExam.tests {
             reponseDao = new ReponseDaoMySQL(db);
             examenDao = new ExamenDaoMySQL(db);
 
+            services = new GestionExamenServicesDefault(professeurDao, candidatDao, questionDao, reponseDao, examenDao);
 
-            exe14();
+            exe15();
         }
 
         public void exe01() {
-            Professeur p = new Professeur("amine.chenfour@usmba.ac.ma", "Chenfour", "amine");
+            Professeur p = new Professeur("amine.chenfour@usmba.ac.ma", "123");
 
             professeurDao.insert(p);
         }
@@ -52,7 +56,7 @@ namespace GestionExam.tests {
 
 
         public void exe04() {
-            Candidat c = new Candidat("ali.bennani@usmba.ac.ma", "ali", "bannani");
+            Candidat c = new Candidat("ali.bennani@usmba.ac.ma", "123");
 
             candidatDao.insert(c);
         }
@@ -97,7 +101,7 @@ namespace GestionExam.tests {
         }
 
         public void exe08() {
-            List<Question> data = questionDao.selectAllQuestions();
+            List<Question> data = questionDao.selectAllQuestions(2);
 
             for (int i = 0; i < data.Count(); i++) {
                 Console.WriteLine(data.ElementAt(i));
@@ -105,7 +109,7 @@ namespace GestionExam.tests {
         }
 
         public void exe09() {
-            QuestionChoixMultiple q = (QuestionChoixMultiple)questionDao.selectQuestionById(2);
+            QuestionChoixMultiple q = (QuestionChoixMultiple)questionDao.selectQuestionById(2, 2);
             Console.WriteLine(q.GetQuestion());
 
             for (int i = 0; i < q.GetChoix().Count(); i++) {
@@ -158,6 +162,45 @@ namespace GestionExam.tests {
 
             Console.WriteLine(exams2);
         }
+
+        public void exe15() {
+            /*services.addProfesseur(new Professeur("mehdi.Chenfour@usmba.ac.ma", "123"));
+            services.addProfesseur(new Professeur("mehdi.bennani@usmba.ac.ma", "123"));
+            services.addProfesseur(new Professeur("alae.Alaoui@usmba.ac.ma", "123"));
+            services.addProfesseur(new Professeur("amine.Bounani@usmba.ac.ma", "123"));
+            services.addProfesseur(new Professeur("hind.lahnine@usmba.ac.ma", "123"));
+            services.addProfesseur(new Professeur("imane.elghazi@usmba.ac.ma", "123"));*/
+
+            Examen e1 = new Examen(1, new DateTime(2022, 12, 8, 13, 30, 0), new DateTime(2022, 12, 8, 14, 30, 0), 45, new Professeur("mehdi.bennani@usmba.ac.ma", "123"), "Java");
+            Examen e2 = new Examen(2, new DateTime(2022, 12, 10, 13, 30, 0), new DateTime(2022, 12, 12, 14, 30, 0), 45, new Professeur("imane.elghazi@usmba.ac.ma", "123"), "Reseau");
+            Examen e3 = new Examen(3, new DateTime(2022, 11, 30, 13, 30, 0), new DateTime(2022, 11, 30, 14, 30, 0), 45, new Professeur("amine.Bounani@usmba.ac.ma", "123"), "Oracle");
+
+            /*services.addExam(e1);
+            services.addExam(e2);
+            services.addExam(e3);
+
+            services.addQuestion(e1, new QuestionDirecte(1, "Expliquer le role de JDBC"), "directe");
+            services.addQuestionDirecte(e1, new QuestionDirecte(2, "Expliquer le role de JDBC"));
+            services.addQuestion(e1, new QuestionDirecte(3, "Expliquer le role de Java Database Conn"), "directe");
+
+            services.addQuestion(e2, new QuestionDirecte(1, "Definisser OSI"), "directe");
+            services.addQuestionDirecte(e2, new QuestionDirecte(2, "Definisser les étapes TCP/IP"));
+            services.addQuestion(e2, new QuestionDirecte(3, "Expliquer la difference entre OSI et TCP/IP "), "directe");*/
+
+            QuestionChoixMultiple q1 = new QuestionChoixMultiple(4, "Choisissez une reponse 1 :");
+            QuestionChoixMultiple q2 = new QuestionChoixMultiple(5, "Choisissez une reponse 2 :");
+
+            services.addQuestion(e3, q1, "qcm");
+            services.addQuestionCM(e3, q2);
+
+            services.addChoicesToQCM(e3, q1, new Choix(41, "choix 1", true));
+            services.addChoicesToQCM(e3, q1, new Choix(42, "choix 2", false));
+
+            services.addChoicesToQCM(e3, q2, new Choix(51, "choix 1", false));
+            services.addChoicesToQCM(e3, q2, new Choix(52, "choix 2", true));
+            services.addChoicesToQCM(e3, q2, new Choix(53, "choix 3", false));
+        }
+
 
         public static void Main(String[] arg) {
             new ConnectionTest();

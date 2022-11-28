@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 namespace GestionExam.models {
     class Professeur {
         private String emailAcademique;
-        private String nom;
-        private String prenom;
+        private String mdp;
 
         public Professeur(){
 
         }
 
-        public Professeur(String emailAcademique, String nom, String prenom) {
+        public Professeur(String emailAcademique, String mdp)
+        {
             this.emailAcademique = emailAcademique;
-            this.nom = nom;
-            this.prenom = prenom;
+            this.mdp = mdp;
         }
 
         public Professeur(String emailAcademique) {
@@ -32,24 +31,16 @@ namespace GestionExam.models {
             return emailAcademique;
         }
 
-        public void SetNom(String nom) {
-            this.nom = nom;
+        public void SetMdp(String mdp) {
+            this.mdp = mdp;
         }
 
-        public String GetNom() {
-            return nom;
-        }
-
-        public void SetPrenom(String prenom) {
-            this.prenom = prenom;
-        }
-
-        public String GetPrenom() {
-            return prenom;
+        public String GetMdp() {
+            return mdp;
         }
 
         public override string ToString() {
-            return "email academique : " + emailAcademique + " ,  nom : " + nom + " , prenom : " + prenom;
+            return "email academique : " + emailAcademique;
         }
 
     }

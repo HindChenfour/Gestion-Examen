@@ -126,5 +126,16 @@ namespace GestionExam.dao {
             String query = "SELECT * FROM " + tableName;
             return SelectQuery(query);
         }
+
+        public List<Object[]> selectByConditions(String tableName, params String[] conditions) {
+            String query = "SELECT * FROM " + tableName + " WHERE " + conditions[0];
+
+            for (int i = 1; i < conditions.Length; i++) {
+                query += " AND " + conditions[i];
+            }
+
+                Console.WriteLine(query);
+            return SelectQuery(query);
+        }
      }
 }

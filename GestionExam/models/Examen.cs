@@ -103,5 +103,9 @@ namespace GestionExam.models {
         public void AddQuestion(Question q) {
             questions.Add(q);
         }
+
+        public Question GetQuestionByIndex(int index) {
+            return questions.ElementAt(index);
+        }
     }
 }

@@ -11,14 +11,13 @@ namespace GestionExam.dao.mapping {
 /*--------------------------------------------------------------------------------------------------------*/
 
         static public Professeur GetProfesseur(params Object[] row) {
-            return new Professeur(row[0].ToString(), row[1].ToString(), row[2].ToString());
+            return new Professeur(row[0].ToString(), row[1].ToString());
         }
 
         static public Object[] GetProfesseurRow(Professeur p) {
             return new Object[] {
                 p.GetEmailAcademique(),
-                p.GetNom(),
-                p.GetPrenom()
+                p.GetMdp()
             };
         }
 
@@ -27,14 +26,13 @@ namespace GestionExam.dao.mapping {
 
 
         static public Candidat GetCandidat(params Object[] row) {
-            return new Candidat(row[0].ToString(), row[1].ToString(), row[2].ToString());
+            return new Candidat(row[0].ToString(), row[1].ToString());
         }
 
         static public Object[] GetCandidatRow(Candidat c) {
             return new Object[] {
                 c.GetEmailAcademique(),
-                c.GetNom(),
-                c.GetPrenom()
+                c.GetMdp()
             };
         }
 
@@ -80,12 +78,13 @@ namespace GestionExam.dao.mapping {
             return new Choix(int.Parse(row[0].ToString()), row[1].ToString(), Boolean.Parse(row[2].ToString()));
         }
 
-        static public Object[] GetChoixRow(Choix c, int idQst) {
+        static public Object[] GetChoixRow(Choix c, int idQst, int idExam) {
             return new Object[] {
                 c.GetIdChoix(),
                 c.GetChoix(),
                 c.GetValeur(),
-                idQst
+                idQst,
+                idExam
             };
         }
 
