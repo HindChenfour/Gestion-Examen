@@ -86,6 +86,12 @@
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\EntryPoint.cs" />
+    <Compile Include="ui\NewChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\NewChoice.Designer.cs">
+      <DependentUpon>NewChoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\NewQuestion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ui\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\NewChoice.resx">
+      <DependentUpon>NewChoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\NewQuestion.resx">
       <DependentUpon>NewQuestion.cs</DependentUpon>
