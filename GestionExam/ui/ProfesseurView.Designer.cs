@@ -42,9 +42,9 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(825, 4);
+            this.panel4.Location = new System.Drawing.Point(1356, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(4, 553);
+            this.panel4.Size = new System.Drawing.Size(4, 615);
             this.panel4.TabIndex = 7;
             // 
             // panel3
@@ -53,16 +53,16 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(4, 553);
+            this.panel3.Size = new System.Drawing.Size(4, 615);
             this.panel3.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 557);
+            this.panel2.Location = new System.Drawing.Point(0, 619);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(829, 4);
+            this.panel2.Size = new System.Drawing.Size(1360, 4);
             this.panel2.TabIndex = 5;
             // 
             // panel1
@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(829, 4);
+            this.panel1.Size = new System.Drawing.Size(1360, 4);
             this.panel1.TabIndex = 4;
             // 
             // exitBtn
@@ -80,7 +80,7 @@
             this.exitBtn.BackColor = System.Drawing.Color.Transparent;
             this.exitBtn.Font = new System.Drawing.Font("Lucida Console", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.exitBtn.Location = new System.Drawing.Point(789, 21);
+            this.exitBtn.Location = new System.Drawing.Point(1262, 9);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(35, 34);
             this.exitBtn.TabIndex = 8;
@@ -91,7 +91,7 @@
             // 
             this.addQuestionBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addQuestionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addQuestionBtn.Location = new System.Drawing.Point(573, 52);
+            this.addQuestionBtn.Location = new System.Drawing.Point(767, 52);
             this.addQuestionBtn.Name = "addQuestionBtn";
             this.addQuestionBtn.Size = new System.Drawing.Size(129, 43);
             this.addQuestionBtn.TabIndex = 10;
@@ -106,7 +106,7 @@
             this.questionsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.questionsPanel.Location = new System.Drawing.Point(52, 52);
             this.questionsPanel.Name = "questionsPanel";
-            this.questionsPanel.Size = new System.Drawing.Size(493, 455);
+            this.questionsPanel.Size = new System.Drawing.Size(671, 486);
             this.questionsPanel.TabIndex = 11;
             this.questionsPanel.WrapContents = false;
             // 
@@ -114,7 +114,7 @@
             // 
             this.getAllQuestionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.getAllQuestionsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getAllQuestionsBtn.Location = new System.Drawing.Point(588, 464);
+            this.getAllQuestionsBtn.Location = new System.Drawing.Point(755, 455);
             this.getAllQuestionsBtn.Name = "getAllQuestionsBtn";
             this.getAllQuestionsBtn.Size = new System.Drawing.Size(129, 43);
             this.getAllQuestionsBtn.TabIndex = 12;
@@ -128,7 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(829, 561);
+            this.ClientSize = new System.Drawing.Size(1360, 623);
             this.Controls.Add(this.getAllQuestionsBtn);
             this.Controls.Add(this.questionsPanel);
             this.Controls.Add(this.addQuestionBtn);

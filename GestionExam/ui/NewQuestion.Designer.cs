@@ -45,9 +45,9 @@
             // questionTxtBox
             // 
             this.questionTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionTxtBox.Location = new System.Drawing.Point(31, 88);
+            this.questionTxtBox.Location = new System.Drawing.Point(31, 95);
             this.questionTxtBox.Name = "questionTxtBox";
-            this.questionTxtBox.Size = new System.Drawing.Size(247, 51);
+            this.questionTxtBox.Size = new System.Drawing.Size(434, 80);
             this.questionTxtBox.TabIndex = 5;
             this.questionTxtBox.Text = "";
             // 
@@ -59,7 +59,7 @@
             this.Controls.Add(this.questionTxtBox);
             this.Controls.Add(this.label1);
             this.Name = "NewQuestion";
-            this.Size = new System.Drawing.Size(395, 171);
+            this.Size = new System.Drawing.Size(511, 212);
             this.Load += new System.EventHandler(this.NewQuestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

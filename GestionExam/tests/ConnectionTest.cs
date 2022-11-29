@@ -202,7 +202,7 @@ namespace GestionExam.tests {
         }
 
 
-        public static void Main(String[] arg) {
+        public static void Main1(String[] arg) {
             new ConnectionTest();
             Console.ReadKey();
         }

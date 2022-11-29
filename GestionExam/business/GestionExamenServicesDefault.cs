@@ -20,6 +20,18 @@ namespace GestionExam.business {
 
         }
 
+        public GestionExamenServicesDefault(ProfesseurDao professeurDao, CandidatDao candidatDao) { 
+            this.professeurDao = professeurDao;
+            this.candidatDao = candidatDao;
+        }
+
+        public GestionExamenServicesDefault(ProfesseurDao professeurDao, QuestionDao questionDao, ReponseDao reponseDao, ExamenDao examenDao) {
+            this.professeurDao = professeurDao;
+            this.questionDao = questionDao;
+            this.reponseDao = reponseDao;
+            this.examenDao = examenDao;
+        }
+
         public GestionExamenServicesDefault(ProfesseurDao professeurDao, CandidatDao candidatDao, QuestionDao questionDao, ReponseDao reponseDao, ExamenDao examenDao) { 
             this.professeurDao = professeurDao;
             this.candidatDao = candidatDao;
@@ -28,7 +40,8 @@ namespace GestionExam.business {
             this.examenDao = examenDao;
         }
 
-        public void addProfesseur(Professeur p) {
+        public void addProfesseur(Professeur p)
+        {
             professeurDao.insert(p);
         }
 
@@ -37,7 +50,9 @@ namespace GestionExam.business {
         }
 
         public Object getConnexion(String email, String pwd) {
-            if (getProfesseur(email, pwd) != null) {
+            MySqlDatabase db = new MySqlDatabase("gestionexamen");
+
+            if (db.select("professeur", "email_academique", email).Count == 1) {
                 return getProfesseur(email, pwd);
             }
 

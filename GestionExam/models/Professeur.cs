@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class Professeur {
+    public class Professeur {
         private String emailAcademique;
         private String mdp;
 

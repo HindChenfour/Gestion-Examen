@@ -107,7 +107,7 @@
             this.emailTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTxtBox.Location = new System.Drawing.Point(42, 91);
             this.emailTxtBox.Name = "emailTxtBox";
-            this.emailTxtBox.Size = new System.Drawing.Size(267, 36);
+            this.emailTxtBox.Size = new System.Drawing.Size(390, 36);
             this.emailTxtBox.TabIndex = 1;
             // 
             // pwdTxtBox
@@ -116,7 +116,7 @@
             this.pwdTxtBox.Location = new System.Drawing.Point(42, 196);
             this.pwdTxtBox.Name = "pwdTxtBox";
             this.pwdTxtBox.PasswordChar = '*';
-            this.pwdTxtBox.Size = new System.Drawing.Size(267, 36);
+            this.pwdTxtBox.Size = new System.Drawing.Size(390, 36);
             this.pwdTxtBox.TabIndex = 3;
             this.pwdTxtBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -136,9 +136,9 @@
             this.Login.Controls.Add(this.pwdTxtBox);
             this.Login.Controls.Add(this.emailTxtBox);
             this.Login.Controls.Add(this.label2);
-            this.Login.Location = new System.Drawing.Point(123, 194);
+            this.Login.Location = new System.Drawing.Point(101, 191);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(430, 285);
+            this.Login.Size = new System.Drawing.Size(479, 285);
             this.Login.TabIndex = 5;
             this.Login.TabStop = false;
             this.Login.Text = "Login";
