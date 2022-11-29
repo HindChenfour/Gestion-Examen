@@ -40,8 +40,7 @@ namespace GestionExam.business {
             this.examenDao = examenDao;
         }
 
-        public void addProfesseur(Professeur p)
-        {
+        public void addProfesseur(Professeur p) {
             professeurDao.insert(p);
         }
 
@@ -81,6 +80,22 @@ namespace GestionExam.business {
 
         public void addExam(Examen e) {
             examenDao.insert(e);
+
+            List<QuestionDirecte> qd = e.GetQuestionsDirecte();
+            List<QuestionChoixMultiple> qcm = e.GetQuestionsCM();
+
+            for (int i = 0; i < qd.Count; i++) {
+                questionDao.insert(qd.ElementAt(i), "directe", e.GetId());
+            }
+
+            for (int i = 0; i < qcm.Count; i++) {
+                questionDao.insert(qcm.ElementAt(i), "qcm", e.GetId());
+
+                List<Choix> choices = qcm.ElementAt(i).GetChoix();
+                for (int j = 0; j < choices.Count; j++) {
+                    questionDao.insertChoice(e.GetId(), qcm.ElementAt(i).GetId(), choices.ElementAt(i));
+                }
+            }
         }
 
         public void addQuestion(Examen e, Question q, String type) {

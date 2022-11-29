@@ -13,8 +13,7 @@ namespace GestionExam.models {
 
         }
 
-        public Professeur(String emailAcademique, String mdp)
-        {
+        public Professeur(String emailAcademique, String mdp) {
             this.emailAcademique = emailAcademique;
             this.mdp = mdp;
         }

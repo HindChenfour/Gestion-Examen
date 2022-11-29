@@ -17,15 +17,22 @@ namespace GestionExam.ui {
         private GestionExamenServices services;
         private Professeur p;
         private List<Examen> exams;
+        private List<NewQuestion> questionsBlock;
         public static int nbExam = 0;
 
         public ProfesseurView() {
             InitializeComponent();
+
+            exams = new List<Examen>();
+            questionsBlock = new List<NewQuestion>();
         }
 
         public ProfesseurView(Professeur p) {
             InitializeComponent();
+
             this.p = p;
+            exams = new List<Examen>();
+            questionsBlock = new List<NewQuestion>();
 
             wiring();
         }
@@ -43,7 +50,8 @@ namespace GestionExam.ui {
         }
 
         private void ProfesseurView_Load(object sender, EventArgs e) {
-            questionsPanel.Controls.Add(new NewQuestion());
+            addQuestion(sender, e);
+            emailLabel.Text = p.GetEmailAcademique();
         }
 
         private void exitBtn_Click(object sender, EventArgs e) {
@@ -51,16 +59,30 @@ namespace GestionExam.ui {
         }
 
         private void addQuestion(object sender, EventArgs e) {
-            questionsPanel.Controls.Add(new NewQuestion());
+            NewQuestion q = new NewQuestion();
+
+            questionsPanel.Controls.Add(q);
+            questionsBlock.Add(q);
         }
 
-        private void getAllQuestionsBtn_Click(object sender, EventArgs e) {
-            var collection = questionsPanel.Controls;
-            for (int i = 0; i < collection.Count; i++)
-            {
-                NewQuestion q = (NewQuestion)collection[i];
-                Console.WriteLine(" - " + q.getQuestionValue());
+         private void creationExamenBtn_click(object sender, EventArgs e) {
+            nbExam ++;
+            Examen ex = new Examen(
+                nbExam,
+                dateTimeOuverture.Value,
+                dateTimeFermeture.Value,
+                int.Parse(dureeNumeric.Value.ToString()),
+                p,
+                matiereTxtBox.Text
+            );
+
+            for (int i = 0; i < questionsBlock.Count; i++) {
+                Question q = questionsBlock.ElementAt(i).getQuestion();
+                ex.AddQuestion(q);
             }
+
+            exams.Add(ex);
+            services.addExam(ex);
         }
 
     }

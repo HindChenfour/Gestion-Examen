@@ -9,7 +9,11 @@ namespace GestionExam.models {
         private List<Choix> choix;
 
         public QuestionChoixMultiple() : base() {
+            SetType("qcm");
+        }
 
+        public QuestionChoixMultiple(int idQuest) : base(idQuest) {
+            SetType("qcm");
         }
 
         public QuestionChoixMultiple(int idQuest, String question) : base(idQuest, question, "qcm") {

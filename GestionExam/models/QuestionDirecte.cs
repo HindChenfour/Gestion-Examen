@@ -9,7 +9,11 @@ namespace GestionExam.models {
         private String reponse;
 
         public QuestionDirecte() : base() {
+            SetType("directe");
+        }
 
+        public QuestionDirecte(int idQuest) : base(idQuest) {
+            SetType("directe");
         }
 
         public QuestionDirecte(int idQuest, String question) : base(idQuest, question, "directe") {

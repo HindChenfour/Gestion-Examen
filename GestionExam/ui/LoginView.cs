@@ -50,7 +50,7 @@ namespace GestionExam.ui {
             String type = services.getConnexion(email, pwd).GetType().ToString();
 
             if(type.EndsWith("Professeur")) {
-                ProfesseurView professeurView = new ProfesseurView();
+                ProfesseurView professeurView = new ProfesseurView(new Professeur(email, pwd));
                 professeurView.Show();
             }
 

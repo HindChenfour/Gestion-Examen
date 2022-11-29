@@ -35,12 +35,15 @@ namespace GestionExam.models {
             this.duree = duree;
             this.realisateur = realis;
             this.matiere = matiere;
+            this.questions = new List<Question>();
         }
 
         public Examen(int id, int duree, String matiere) {
             this.id = id;
             this.duree = duree;
             this.matiere = matiere;
+            this.questions = new List<Question>();
+            this.realisateur = new Professeur();
         }
 
         public void SetId(int id)
@@ -106,6 +109,30 @@ namespace GestionExam.models {
 
         public Question GetQuestionByIndex(int index) {
             return questions.ElementAt(index);
+        }
+
+        public List<QuestionDirecte> GetQuestionsDirecte() {
+            List<Question> data = questions;
+            List<QuestionDirecte> questionsList = new List<QuestionDirecte>();
+
+            for (int i = 0; i < data.Count; i++) {
+                if (data.ElementAt(i).GetType().Equals("directe")) {
+                    questionsList.Add((QuestionDirecte)data.ElementAt(i));
+                }
+            }
+            return questionsList;
+        }
+
+        public List<QuestionChoixMultiple> GetQuestionsCM() {
+            List<Question> data = questions;
+            List<QuestionChoixMultiple> questionsList = new List<QuestionChoixMultiple>();
+
+            for (int i = 0; i < data.Count; i++) {
+                if (data.ElementAt(i).GetType().Equals("qcm")) {
+                    questionsList.Add((QuestionChoixMultiple)data.ElementAt(i));
+                }
+            }
+            return questionsList;
         }
     }
 }

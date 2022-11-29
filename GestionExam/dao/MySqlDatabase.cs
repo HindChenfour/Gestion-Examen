@@ -109,6 +109,8 @@ namespace GestionExam.dao {
             }
             query += ")";
 
+            Console.WriteLine(query);
+
             return UpdateQuery(query);
         }
 

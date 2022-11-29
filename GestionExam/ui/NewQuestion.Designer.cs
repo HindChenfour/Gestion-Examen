@@ -28,39 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.questionTxtBox = new System.Windows.Forms.RichTextBox();
+            this.label = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
+            this.qcmBtn = new System.Windows.Forms.Button();
+            this.qstDirecteBtn = new System.Windows.Forms.Button();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Question :";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(3, 23);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(431, 29);
+            this.label.TabIndex = 4;
+            this.label.Text = "Choisir le type de question à ajouter :";
             // 
-            // questionTxtBox
+            // panel2
             // 
-            this.questionTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionTxtBox.Location = new System.Drawing.Point(31, 95);
-            this.questionTxtBox.Name = "questionTxtBox";
-            this.questionTxtBox.Size = new System.Drawing.Size(434, 80);
-            this.questionTxtBox.TabIndex = 5;
-            this.questionTxtBox.Text = "";
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Location = new System.Drawing.Point(38, 222);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(594, 4);
+            this.panel2.TabIndex = 15;
+            // 
+            // panel
+            // 
+            this.panel.Controls.Add(this.qcmBtn);
+            this.panel.Controls.Add(this.qstDirecteBtn);
+            this.panel.Location = new System.Drawing.Point(22, 71);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(737, 145);
+            this.panel.TabIndex = 16;
+            // 
+            // qcmBtn
+            // 
+            this.qcmBtn.BackColor = System.Drawing.Color.PowderBlue;
+            this.qcmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.qcmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qcmBtn.Location = new System.Drawing.Point(92, 82);
+            this.qcmBtn.Name = "qcmBtn";
+            this.qcmBtn.Size = new System.Drawing.Size(452, 43);
+            this.qcmBtn.TabIndex = 16;
+            this.qcmBtn.Text = "Question Choix Multiple";
+            this.qcmBtn.UseVisualStyleBackColor = false;
+            this.qcmBtn.Click += new System.EventHandler(this.qcmBtn_Click_1);
+            // 
+            // qstDirecteBtn
+            // 
+            this.qstDirecteBtn.BackColor = System.Drawing.Color.PowderBlue;
+            this.qstDirecteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.qstDirecteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qstDirecteBtn.Location = new System.Drawing.Point(92, 14);
+            this.qstDirecteBtn.Name = "qstDirecteBtn";
+            this.qstDirecteBtn.Size = new System.Drawing.Size(452, 43);
+            this.qstDirecteBtn.TabIndex = 15;
+            this.qstDirecteBtn.Text = "Question Directe";
+            this.qstDirecteBtn.UseVisualStyleBackColor = false;
+            this.qstDirecteBtn.Click += new System.EventHandler(this.qstDirecteBtn_Click);
             // 
             // NewQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.Controls.Add(this.questionTxtBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label);
             this.Name = "NewQuestion";
-            this.Size = new System.Drawing.Size(511, 212);
-            this.Load += new System.EventHandler(this.NewQuestion_Load);
+            this.Size = new System.Drawing.Size(794, 226);
+            this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,7 +108,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox questionTxtBox;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Button qcmBtn;
+        private System.Windows.Forms.Button qstDirecteBtn;
     }
 }

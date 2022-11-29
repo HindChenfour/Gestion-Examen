@@ -5,13 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class Question {
+    public class Question {
         private int id;
         private String question;
         private String type;
 
         public Question() {
 
+        }
+
+        public Question(int id) {
+            this.id = id;
         }
 
         public Question(int id, String question, String type) {
