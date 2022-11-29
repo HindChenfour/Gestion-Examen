@@ -16,6 +16,7 @@ namespace GestionExam.ui {
         private Question q;
         private List<NewChoice> choices;
         private RichTextBox questionBlock;
+        private Point position;
 
         public NewQuestion() {
             InitializeComponent();
@@ -55,14 +56,15 @@ namespace GestionExam.ui {
 
             setRichTextBox();
 
+            position = new Point(25, 100);
             NewChoice c = new NewChoice();
-            c.Location = new Point(25, 100);
+            c.Location = position;
 
             Button btnAjouter = new Button();
 
             btnAjouter.Text = "Ajouter";
             btnAjouter.Name = "bntAjouter";
-            btnAjouter.Location = new Point(675, 100);
+            btnAjouter.Location = new Point(440, 150);
             btnAjouter.Click += btnAjouterChoix_click;
             choices.Add(c);
 
@@ -75,6 +77,9 @@ namespace GestionExam.ui {
         private void btnAjouterChoix_click(object sender, EventArgs e) {
             NewChoice c = new NewChoice();
 
+            position.Y += 50;
+            c.Location = position;
+
             choices.Add(c);
             panel.Controls.Add(c);
         }
@@ -84,7 +89,8 @@ namespace GestionExam.ui {
         }
 
         public void setQuestionCMValue() {
-
+            q.SetQuestion(questionBlock.Text);
+            q = (QuestionChoixMultiple)q;
         }
 
         public void setQuestionValue() {

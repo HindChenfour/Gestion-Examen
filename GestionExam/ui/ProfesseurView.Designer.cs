@@ -30,6 +30,7 @@
         {
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Label();
@@ -45,10 +46,10 @@
             this.matiereTxtBox = new System.Windows.Forms.TextBox();
             this.dureeNumeric = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dureeNumeric)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +72,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(4, 854);
             this.panel3.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(4, 854);
+            this.panel5.TabIndex = 7;
             // 
             // panel2
             // 
@@ -224,15 +234,6 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Durée :";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(4, 854);
-            this.panel5.TabIndex = 7;
-            // 
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -326,5 +327,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label emailLabel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
