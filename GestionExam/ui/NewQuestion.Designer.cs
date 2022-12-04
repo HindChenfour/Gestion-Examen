@@ -30,9 +30,9 @@
         {
             this.label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.qstDirecteBtn = new System.Windows.Forms.Button();
-            this.qcmBtn = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.qcmBtn = new System.Windows.Forms.Button();
+            this.qstDirecteBtn = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,25 +48,22 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Location = new System.Drawing.Point(16, 168);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 226);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(594, 4);
+            this.panel2.Size = new System.Drawing.Size(794, 4);
             this.panel2.TabIndex = 15;
             // 
-            // qstDirecteBtn
+            // panel
             // 
-            this.qstDirecteBtn.BackColor = System.Drawing.Color.PowderBlue;
-            this.qstDirecteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.qstDirecteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qstDirecteBtn.Location = new System.Drawing.Point(92, 14);
-            this.qstDirecteBtn.Name = "qstDirecteBtn";
-            this.qstDirecteBtn.Size = new System.Drawing.Size(452, 43);
-            this.qstDirecteBtn.TabIndex = 15;
-            this.qstDirecteBtn.Text = "Question Directe";
-            this.qstDirecteBtn.UseVisualStyleBackColor = false;
-            this.qstDirecteBtn.Click += new System.EventHandler(this.qstDirecteBtn_Click);
+            this.panel.AutoScroll = true;
+            this.panel.Controls.Add(this.qcmBtn);
+            this.panel.Controls.Add(this.qstDirecteBtn);
+            this.panel.Location = new System.Drawing.Point(22, 71);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(737, 145);
+            this.panel.TabIndex = 16;
             // 
             // qcmBtn
             // 
@@ -81,27 +78,33 @@
             this.qcmBtn.UseVisualStyleBackColor = false;
             this.qcmBtn.Click += new System.EventHandler(this.qcmBtn_Click);
             // 
-            // panel
+            // qstDirecteBtn
             // 
-            this.panel.AutoScroll = true;
-            this.panel.Controls.Add(this.qcmBtn);
-            this.panel.Controls.Add(this.qstDirecteBtn);
-            this.panel.Location = new System.Drawing.Point(22, 71);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(737, 145);
-            this.panel.TabIndex = 16;
+            this.qstDirecteBtn.BackColor = System.Drawing.Color.PowderBlue;
+            this.qstDirecteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.qstDirecteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qstDirecteBtn.Location = new System.Drawing.Point(92, 14);
+            this.qstDirecteBtn.Name = "qstDirecteBtn";
+            this.qstDirecteBtn.Size = new System.Drawing.Size(452, 43);
+            this.qstDirecteBtn.TabIndex = 15;
+            this.qstDirecteBtn.Text = "Question Directe";
+            this.qstDirecteBtn.UseVisualStyleBackColor = false;
+            this.qstDirecteBtn.Click += new System.EventHandler(this.qstDirecteBtn_Click);
             // 
             // NewQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Azure;
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label);
+            this.MaximumSize = new System.Drawing.Size(794, 400);
+            this.MinimumSize = new System.Drawing.Size(794, 230);
             this.Name = "NewQuestion";
-            this.Size = new System.Drawing.Size(794, 226);
+            this.Size = new System.Drawing.Size(794, 230);
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,8 +115,8 @@
 
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button qstDirecteBtn;
-        private System.Windows.Forms.Button qcmBtn;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Button qcmBtn;
+        private System.Windows.Forms.Button qstDirecteBtn;
     }
 }

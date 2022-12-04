@@ -34,9 +34,10 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(19, 60);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(41, 3);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(453, 60);
+            this.richTextBox1.Size = new System.Drawing.Size(600, 47);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -44,11 +45,11 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(14, 11);
+            this.label.Location = new System.Drawing.Point(3, 12);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(91, 29);
-            this.label.TabIndex = 9;
-            this.label.Text = "Choix :";
+            this.label.Size = new System.Drawing.Size(43, 29);
+            this.label.TabIndex = 5;
+            this.label.Text = ">>";
             // 
             // NewChoice
             // 
@@ -58,7 +59,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.richTextBox1);
             this.Name = "NewChoice";
-            this.Size = new System.Drawing.Size(491, 146);
+            this.Size = new System.Drawing.Size(644, 64);
             this.ResumeLayout(false);
             this.PerformLayout();
 

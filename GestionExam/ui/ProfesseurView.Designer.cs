@@ -133,7 +133,7 @@
             this.questionsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.questionsPanel.Location = new System.Drawing.Point(45, 389);
             this.questionsPanel.Name = "questionsPanel";
-            this.questionsPanel.Size = new System.Drawing.Size(862, 357);
+            this.questionsPanel.Size = new System.Drawing.Size(862, 418);
             this.questionsPanel.TabIndex = 11;
             this.questionsPanel.WrapContents = false;
             // 
@@ -142,7 +142,7 @@
             this.creationExamBtn.BackColor = System.Drawing.Color.MediumTurquoise;
             this.creationExamBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.creationExamBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creationExamBtn.Location = new System.Drawing.Point(728, 776);
+            this.creationExamBtn.Location = new System.Drawing.Point(958, 807);
             this.creationExamBtn.Name = "creationExamBtn";
             this.creationExamBtn.Size = new System.Drawing.Size(367, 43);
             this.creationExamBtn.TabIndex = 12;
