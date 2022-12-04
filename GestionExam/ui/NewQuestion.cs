@@ -16,10 +16,14 @@ namespace GestionExam.ui {
         private Question q;
         private List<NewChoice> choices;
         private RichTextBox questionBlock;
-        private Point position;
+//        private Point position;
+        FlowLayoutPanel flowPanel;
 
         public NewQuestion() {
             InitializeComponent();
+
+            flowPanel = new FlowLayoutPanel();
+            flowPanel.Location = new Point(5, 200);
         }
 
         private void setRichTextBox() {
@@ -54,34 +58,43 @@ namespace GestionExam.ui {
             qcmBtn.Hide();
             qstDirecteBtn.Hide();
 
+            //this.Size = new Rectangle(0, 0, 794, 580).Size;
             setRichTextBox();
 
-            position = new Point(25, 100);
             NewChoice c = new NewChoice();
-            c.Location = position;
-
-            Button btnAjouter = new Button();
-
-            btnAjouter.Text = "Ajouter";
-            btnAjouter.Name = "bntAjouter";
-            btnAjouter.Location = new Point(440, 150);
-            btnAjouter.Click += btnAjouterChoix_click;
             choices.Add(c);
 
+            Button btnAjouter = new Button();
+            btnAjouter.Text = "Ajouter un choix";
+            btnAjouter.Name = "bntAjouter";
+            btnAjouter.Location = new Point(380, 170);
+            btnAjouter.Size = new Rectangle(0, 0, 180, 40).Size;
+            btnAjouter.Font = new Font("Microsoft Sans Serif", 15);
+
+            btnAjouter.Click += btnAjouterChoix_click;
+
+            flowPanel.Location = new Point(19, 233);
+            flowPanel.Size = new Rectangle(0, 0, 500, 280).Size;
+           
+
+            flowPanel.Controls.Add(c);
+            flowPanel.Show();
+
             panel.Controls.Add(questionBlock);
-            panel.Controls.Add(c);
-            panel.Controls.Add(btnAjouter);
             panel.Show();
+
+            this.Controls.Add(btnAjouter);
+            this.Controls.Add(flowPanel);
         }
 
         private void btnAjouterChoix_click(object sender, EventArgs e) {
             NewChoice c = new NewChoice();
 
-            position.Y += 50;
-            c.Location = position;
+//            position.Y += 50;
+//            c.Location = position;
 
             choices.Add(c);
-            panel.Controls.Add(c);
+            flowPanel.Controls.Add(c);
         }
 
         public void setQuestionDirecteValue() {
