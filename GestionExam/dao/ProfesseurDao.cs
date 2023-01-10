@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using GestionExam.models;
 
 namespace GestionExam.dao {
-    interface ProfesseurDao {
+    public interface ProfesseurDao {
         Professeur selectById(String id);
         List<Professeur> selectAll();
         void insert(Professeur p);

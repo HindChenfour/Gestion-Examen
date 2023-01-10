@@ -8,7 +8,7 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class ExamenDaoMySQL : ExamenDao {
+    public class ExamenDaoMySQL : ExamenDao {
         private MySqlDatabase db;
         private const String TABLE_NAME = "examen";
 
@@ -53,6 +53,11 @@ namespace GestionExam.dao {
                 elements.Add(ExamenMapping.GetExamen(data.ElementAt(i)));
             }
             return elements;
+        }
+
+        public int selectExamsNumber(String email) {
+            List<Examen> exams = selectExamenByProfesseur(email);                          
+            return exams.Count;
         }
 
     }

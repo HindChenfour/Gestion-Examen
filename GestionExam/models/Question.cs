@@ -44,7 +44,7 @@ namespace GestionExam.models {
             this.type = type;
         }
 
-        public String GetType() {
+        public String GetQuestionType() {
             return type;
         }
 

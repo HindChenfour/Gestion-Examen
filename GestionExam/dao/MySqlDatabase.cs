@@ -10,7 +10,7 @@ using System.Data;
 using System.IO;
 
 namespace GestionExam.dao {
-    class MySqlDatabase {
+    public class MySqlDatabase {
         private String server = "localhost";
         private String user;
         private String pwd;

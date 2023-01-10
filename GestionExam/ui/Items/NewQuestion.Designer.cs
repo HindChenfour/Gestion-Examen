@@ -50,19 +50,20 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 226);
+            this.panel2.Location = new System.Drawing.Point(0, 269);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 4);
+            this.panel2.Size = new System.Drawing.Size(932, 4);
             this.panel2.TabIndex = 15;
             // 
             // panel
             // 
             this.panel.AutoScroll = true;
+            this.panel.AutoSize = true;
             this.panel.Controls.Add(this.qcmBtn);
             this.panel.Controls.Add(this.qstDirecteBtn);
             this.panel.Location = new System.Drawing.Point(22, 71);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(737, 145);
+            this.panel.Size = new System.Drawing.Size(895, 185);
             this.panel.TabIndex = 16;
             // 
             // qcmBtn
@@ -70,7 +71,7 @@
             this.qcmBtn.BackColor = System.Drawing.Color.PowderBlue;
             this.qcmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.qcmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qcmBtn.Location = new System.Drawing.Point(92, 82);
+            this.qcmBtn.Location = new System.Drawing.Point(171, 114);
             this.qcmBtn.Name = "qcmBtn";
             this.qcmBtn.Size = new System.Drawing.Size(452, 43);
             this.qcmBtn.TabIndex = 16;
@@ -83,7 +84,7 @@
             this.qstDirecteBtn.BackColor = System.Drawing.Color.PowderBlue;
             this.qstDirecteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.qstDirecteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qstDirecteBtn.Location = new System.Drawing.Point(92, 14);
+            this.qstDirecteBtn.Location = new System.Drawing.Point(171, 36);
             this.qstDirecteBtn.Name = "qstDirecteBtn";
             this.qstDirecteBtn.Size = new System.Drawing.Size(452, 43);
             this.qstDirecteBtn.TabIndex = 15;
@@ -95,16 +96,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Azure;
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label);
-            this.MaximumSize = new System.Drawing.Size(794, 400);
-            this.MinimumSize = new System.Drawing.Size(794, 230);
             this.Name = "NewQuestion";
-            this.Size = new System.Drawing.Size(794, 230);
+            this.Size = new System.Drawing.Size(932, 273);
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

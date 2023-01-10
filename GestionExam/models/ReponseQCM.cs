@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class ReponseQCM : Reponse {
+    public class ReponseQCM : Reponse {
         private int idChoix;
 
         public ReponseQCM() : base() {

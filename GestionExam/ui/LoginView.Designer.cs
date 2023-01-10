@@ -118,7 +118,6 @@
             this.pwdTxtBox.PasswordChar = '*';
             this.pwdTxtBox.Size = new System.Drawing.Size(390, 36);
             this.pwdTxtBox.TabIndex = 3;
-            this.pwdTxtBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 

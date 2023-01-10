@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class Examen {
+    public class Examen {
         private int id;
-        private DateTime dateOuverture;
-        private DateTime dateFermeture;
-        private int duree;
-        private List<Question> questions;
         private Professeur realisateur;
         private String matiere;
+        private int duree;
+        private DateTime dateOuverture;
+        private DateTime dateFermeture;
+        private List<Question> questions;
 
         public Examen() {
         
@@ -46,8 +46,18 @@ namespace GestionExam.models {
             this.realisateur = new Professeur();
         }
 
-        public void SetId(int id)
-        {
+        public Examen(Professeur realisateur) {
+            this.realisateur = realisateur;
+            this.questions = new List<Question>();
+        }
+
+        public Examen(Professeur realisateur, int id) {
+            this.realisateur = realisateur;
+            this.id = id;
+            this.questions = new List<Question>();
+        }
+
+        public void SetId(int id) {
             this.id = id;
         }
 
@@ -77,6 +87,10 @@ namespace GestionExam.models {
 
         public int GetDuree() {
             return duree;
+        }
+
+        public int GetQuestionsNumber() {
+            return questions.Count;
         }
 
         public void SetQuestions(List<Question> questions) {
@@ -116,7 +130,7 @@ namespace GestionExam.models {
             List<QuestionDirecte> questionsList = new List<QuestionDirecte>();
 
             for (int i = 0; i < data.Count; i++) {
-                if (data.ElementAt(i).GetType().Equals("directe")) {
+                if (data.ElementAt(i).GetQuestionType().Equals("directe")) {
                     questionsList.Add((QuestionDirecte)data.ElementAt(i));
                 }
             }
@@ -128,11 +142,12 @@ namespace GestionExam.models {
             List<QuestionChoixMultiple> questionsList = new List<QuestionChoixMultiple>();
 
             for (int i = 0; i < data.Count; i++) {
-                if (data.ElementAt(i).GetType().Equals("qcm")) {
+                if (data.ElementAt(i).GetQuestionType().Equals("qcm")) {
                     questionsList.Add((QuestionChoixMultiple)data.ElementAt(i));
                 }
             }
             return questionsList;
         }
+
     }
 }

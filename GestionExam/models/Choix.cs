@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class Choix {
+    public class Choix {
         private int idChoix;
         private String choix;
         private bool valeur;

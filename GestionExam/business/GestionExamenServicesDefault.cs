@@ -9,7 +9,7 @@ using GestionExam.dao;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.business {
-    class GestionExamenServicesDefault : GestionExamenServices {
+    public class GestionExamenServicesDefault : GestionExamenServices {
         private ProfesseurDao professeurDao;
         private CandidatDao candidatDao;
         private QuestionDao questionDao;
@@ -90,11 +90,6 @@ namespace GestionExam.business {
 
             for (int i = 0; i < qcm.Count; i++) {
                 questionDao.insert(qcm.ElementAt(i), "qcm", e.GetId());
-
-                List<Choix> choices = qcm.ElementAt(i).GetChoix();
-                for (int j = 0; j < choices.Count; j++) {
-                    questionDao.insertChoice(e.GetId(), qcm.ElementAt(i).GetId(), choices.ElementAt(i));
-                }
             }
         }
 
@@ -108,6 +103,15 @@ namespace GestionExam.business {
 
         public void addQuestionCM(Examen e, QuestionChoixMultiple q) {
             addQuestion(e, q, "qcm");
+        }
+
+        public void addExamQuestions(Examen e) {
+            List<Question> questions = e.Getquestions();
+
+            for (int i = 0; i < questions.Count; i++) {
+                Question q = questions.ElementAt(i);
+                addQuestion(e, q, q.GetQuestionType());
+            }
         }
 
         public void addChoicesToQCM(Examen e, Question q, Choix c) {
@@ -127,5 +131,12 @@ namespace GestionExam.business {
             return questionDao.selectQuestionById(idQst, exam.GetId());
         }
 
+        public List<Examen> getExamsByProf(Professeur p) {
+            return examenDao.selectExamenByProfesseur(p.GetEmailAcademique());
+        }
+
+        public int getExamsNumber(Professeur p) {
+            return examenDao.selectExamsNumber(p.GetEmailAcademique());
+        }
     }
 }

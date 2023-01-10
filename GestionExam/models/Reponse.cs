@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class Reponse {
+    public class Reponse {
         private int idQuest;
 
         public Reponse() {

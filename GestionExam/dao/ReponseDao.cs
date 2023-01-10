@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using GestionExam.models;
 
 namespace GestionExam.dao {
-    interface ReponseDao {
+    public interface ReponseDao {
         Reponse selectReponseById(int id);
         Choix selectReponseQCM(int id);
         List<Reponse> selectAll();

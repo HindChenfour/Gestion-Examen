@@ -18,17 +18,11 @@ namespace GestionExam.ui {
 
         public LoginView() {
             InitializeComponent();
-            wiring();
         }
 
-        private void wiring() {
-            //Wiring :
-            MySqlDatabase db = new MySqlDatabase("gestionexamen");
-
-            ProfesseurDao profeseurDao = new ProfesseurDaoMySQL(db);
-            CandidatDao candidatDao = new CandidatDaoMySQL(db);
-
-            services = new GestionExamenServicesDefault(profeseurDao, candidatDao);
+        public LoginView(GestionExamenServices services) {
+            InitializeComponent();
+            this.services = services;
         }
 
         private void exitBtn_Click(object sender, EventArgs e) {
@@ -43,19 +37,17 @@ namespace GestionExam.ui {
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e) {
+        public void btnLogin_Click(object sender, EventArgs e) {
             String email = emailTxtBox.Text;
             String pwd = pwdTxtBox.Text;
 
             String type = services.getConnexion(email, pwd).GetType().ToString();
 
             if(type.EndsWith("Professeur")) {
-                ProfesseurView professeurView = new ProfesseurView(new Professeur(email, pwd));
-                professeurView.Show();
+                HomeView home = new HomeView(new Professeur(email, pwd), services);
+                home.Show();
             }
-
-            
-            //Hide();
+            Hide();
         }
     }
 }

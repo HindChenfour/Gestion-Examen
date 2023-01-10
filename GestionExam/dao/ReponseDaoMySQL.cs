@@ -8,7 +8,7 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class ReponseDaoMySQL : ReponseDao {
+    public class ReponseDaoMySQL : ReponseDao {
         private MySqlDatabase db;
         private const String RPS_DIRECT_TABLE = "reponse_directe";
         private const String RPS_QCM_TABLE = "reponse_qcm";

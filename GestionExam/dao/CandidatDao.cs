@@ -8,7 +8,8 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    interface CandidatDao {
+    public interface CandidatDao
+    {
         Candidat selectById(String id);
         List<Candidat> selectAll();
         void insert(Candidat c);

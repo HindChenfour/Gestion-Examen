@@ -8,7 +8,7 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class CandidatDaoMySQL : CandidatDao {
+    public class CandidatDaoMySQL : CandidatDao {
         private MySqlDatabase db;
         private const String TABLE_NAME = "candidat";
 

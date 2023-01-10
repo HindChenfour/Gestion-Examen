@@ -94,10 +94,10 @@ namespace GestionExam.tests {
             choices2.Add(new Choix(23, "Uniffying Modeling Language", false));
             qcm2.SetChoix(choices2);
 
-            questionDao.insert(qd1, qd1.GetType(), 0);
-            questionDao.insert(qcm1, qcm1.GetType(), 0);
-            questionDao.insert(qd2, qd2.GetType(), 0);
-            questionDao.insert(qcm2, qcm2.GetType(), 0);
+            questionDao.insert(qd1, qd1.GetQuestionType(), 0);
+            questionDao.insert(qcm1, qcm1.GetQuestionType(), 0);
+            questionDao.insert(qd2, qd2.GetQuestionType(), 0);
+            questionDao.insert(qcm2, qcm2.GetQuestionType(), 0);
         }
 
         public void exe08() {

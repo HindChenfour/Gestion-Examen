@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class ReponseDirecte : Reponse {
+    public class ReponseDirecte : Reponse {
         private String reponse;
 
         public ReponseDirecte() : base() {

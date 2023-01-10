@@ -79,6 +79,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="tests\ConnectionTest.cs" />
+    <Compile Include="ui\ConfirmationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\ConfirmationView.Designer.cs">
+      <DependentUpon>ConfirmationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\ExamForm.Designer.cs">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,23 +98,29 @@
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\EntryPoint.cs" />
-    <Compile Include="ui\NewChoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ui\NewChoice.Designer.cs">
-      <DependentUpon>NewChoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ui\NewQuestion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ui\NewQuestion.Designer.cs">
-      <DependentUpon>NewQuestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ui\ProfesseurView.cs">
+    <Compile Include="ui\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ui\ProfesseurView.Designer.cs">
-      <DependentUpon>ProfesseurView.cs</DependentUpon>
+    <Compile Include="ui\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\Items\NewChoicesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\Items\NewChoicesList.Designer.cs">
+      <DependentUpon>NewChoicesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\Items\NewQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\Items\NewQuestion.Designer.cs">
+      <DependentUpon>NewQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\QuestionsFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\QuestionsFormView.Designer.cs">
+      <DependentUpon>QuestionsFormView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -188,19 +206,29 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\ConfirmationView.resx">
+      <DependentUpon>ConfirmationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\ExamForm.resx">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ui\NewChoice.resx">
-      <DependentUpon>NewChoice.cs</DependentUpon>
+    <EmbeddedResource Include="ui\Items\NewChoicesList.resx">
+      <DependentUpon>NewChoicesList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ui\NewQuestion.resx">
+    <EmbeddedResource Include="ui\Items\NewQuestion.resx">
       <DependentUpon>NewQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ui\ProfesseurView.resx">
-      <DependentUpon>ProfesseurView.cs</DependentUpon>
+    <EmbeddedResource Include="ui\QuestionsFormView.resx">
+      <DependentUpon>QuestionsFormView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

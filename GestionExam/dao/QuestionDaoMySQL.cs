@@ -8,7 +8,7 @@ using GestionExam.models;
 using GestionExam.dao.mapping;
 
 namespace GestionExam.dao {
-    class QuestionDaoMySQL : QuestionDao {
+    public class QuestionDaoMySQL : QuestionDao {
         private MySqlDatabase db;
         private const String QST_DIRECT_TABLE = "question_directe";
         private const String QCM_TABLE = "question_choix_multiple";
@@ -87,6 +87,7 @@ namespace GestionExam.dao {
                 if (choices != null) {
                     for (int i = 0; i < choices.Count(); i++) {
                         db.insert(CHOICES_TABLE, ExamenMapping.GetChoixRow(choices.ElementAt(i), q.GetId(), idExamen));
+                        Console.WriteLine("********** choice : " + choices.ElementAt(i).GetChoix() + " ************");
                     }
                 }
             }

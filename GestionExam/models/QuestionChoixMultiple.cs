@@ -5,19 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionExam.models {
-    class QuestionChoixMultiple : Question {
+    public class QuestionChoixMultiple : Question {
         private List<Choix> choix;
 
         public QuestionChoixMultiple() : base() {
             SetType("qcm");
+            this.choix = new List<Choix>();
         }
 
         public QuestionChoixMultiple(int idQuest) : base(idQuest) {
             SetType("qcm");
+            this.choix = new List<Choix>();
         }
 
         public QuestionChoixMultiple(int idQuest, String question) : base(idQuest, question, "qcm") {
-
+            this.choix = new List<Choix>();
         }
 
         public QuestionChoixMultiple(int idQuest, String question, List<Choix> choix) : base(idQuest, question, "qcm") {
