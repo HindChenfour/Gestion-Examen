@@ -52,6 +52,7 @@ namespace GestionExam.business {
             MySqlDatabase db = new MySqlDatabase("gestionexamen");
 
             if (db.select("professeur", "email_academique", email).Count == 1) {
+               
                 return getProfesseur(email, pwd);
             }
 
@@ -64,7 +65,7 @@ namespace GestionExam.business {
             if(prof.GetMdp().Equals(pwd)) {
                 return prof;
             }
-        
+            Console.WriteLine("returning null : " + prof.GetMdp() + "!=" + pwd);
             return null;
         }
 
